@@ -1,0 +1,96 @@
+@import "/static/iconfont/iconfont.wxss";
+
+.navigation-warp {
+  overflow: hidden;
+}
+
+.navbar-placeholder {
+  position: relative;
+  z-index: 50;
+  visibility: hidden;
+  font-size: 0;
+}
+
+.navbar-navigation {
+  width: calc(100% - 97px);
+  height: 100%;
+  padding-right: 97px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  box-sizing: content-box;
+}
+
+.navbar_left {
+  display: flex;
+  padding-left: 16px;
+  align-items: center;
+}
+
+.back {
+  transform: rotate(180deg);
+  text-align: right;
+  padding: 30rpx;
+  margin-left: -30rpx;
+}
+
+.search-container {
+  width: 56rpx;
+  height: 56rpx;
+  background-color: var(--gray-color-f9);
+  border-radius: 28rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-search {
+  color: var(--black-color);
+  font-size: 40rpx;
+}
+
+.iconshouye1 {
+  font-size: 40rpx;
+  margin-left: 36rpx;
+  position: relative;
+  top: 4rpx;
+}
+
+.icon.iconfont.icon-youjiantou {
+  line-height: 24px;
+  width: 12px;
+  font-weight: bold;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.navbar_title {
+  box-sizing: border-box;
+  flex: 1;
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* 背景图 */
+.bg-img-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 280rpx;
+  z-index: -1;
+}
+
+.bg-img {
+  width: 100vw;
+  height: 280rpx;
+}

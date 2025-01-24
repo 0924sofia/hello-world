@@ -1,0 +1,15 @@
+<custom-navigation navigationInfo="{{pageConfig}}" zIndex="2"></custom-navigation>
+
+<view class="index-container">
+
+<view class="scroll-container flexCenter" catch:tap="gotoScrollText">
+  <view class="animation" animation="{{animation}}">
+    <text class="scroll-text text">{{scrollText}}</text>
+  </view>
+</view>
+
+<view class="colorful-container">
+  <view class="left flexCenter">表白灯牌</view>
+  <view class="left right flexCenter">表白灯牌</view>
+</view>
+</view>

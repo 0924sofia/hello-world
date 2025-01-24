@@ -1,0 +1,35 @@
+<view class="navigation-warp">
+  <view class="navbar-placeholder" style="height:{{navHeight}}px;"></view>
+  <view class="navbar-navigation" 
+  style="padding-top:{{statusBarHeight}}px;height:calc({{navHeight-statusBarHeight}}px);background-color:{{navigationInfo.pageBgColor}};z-index: {{zIndex}};">
+
+    <!-- 左上角 返回按钮 和 home按钮 wx:if="{{showNav}}" 是控制左上角按钮的显示隐藏，首页不显示 -->
+    <view class="navbar_left" style="width:97px;">
+      <!-- 控制返回按钮的显示 -->
+      <view bindtap="navBack" wx:if="{{showNav}}" class="back">
+        <text class="icon iconfont icon-youjiantou" style="{{backIconStyle}}"></text>
+      </view>
+      <!-- home按钮 wx:if="{{showHome}}" 是控制左上角 home按钮的显示隐藏-->
+      <view bindtap="navHome" wx:if="{{showHome}}">
+        <text class="icon iconfont iconshouyexuanzhong"></text>
+      </view>
+      <!-- 搜索按钮 wx:if="{{showSearch}}" 是控制左上角 home按钮的显示隐藏-->
+      <view bindtap="navSearch" class="search-container" wx:if="{{showSearch}}">
+        <text class="icon iconfont icon-search"></text>
+      </view>
+    </view>
+
+    <!-- 中间标题 -->
+    <view class="navbar_title" style="color:{{navigationInfo.pageTitleColor}};">
+      <text wx:if="{{navigationInfo.pageTitle}}" space="nbsp">{{navigationInfo.pageTitle}}</text>
+      <image wx:if="{{navigationInfo.pageImg}}" src="{{navigationInfo.pageImg}}" style="width:167rpx; height: 34rpx;">
+      </image>
+    </view>
+
+    <view wx:if="{{showBgImg}}" class="bg-img-container">
+      <image src="{{navigationInfo.imageBg}}" mode="widthFix" class="bg-img" />
+    </view>
+
+  </view>
+
+</view>
