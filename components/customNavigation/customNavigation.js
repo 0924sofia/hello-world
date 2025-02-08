@@ -8,7 +8,6 @@ Component({
       type: Boolean,
       value: false,
       observer: (val) => {
-        // 
       }
     },
     showHome: { //判断是否显示左上角的home按钮
@@ -30,8 +29,8 @@ Component({
     showBgImg: Boolean, // 是否展示底部背景图
     zIndex: String,
     backIconStyle: String,
-    fromPC: String,
   },
+
 
   /**
    * 组件的初始数据

@@ -1,25 +1,44 @@
-page {
-  background-color: #000;
-}
-
-/**顶部文字滑动*/
-.index-container {
-  width: 100vw;
-  height: 100vh;
+/* 整体容器样式 */
+.container {
   display: flex;
+  justify-content: center;
+  /* 水平居中 */
+  align-items: center;
+  /* 垂直居中 */
+  height: 100vh;
+  /* 全屏高度 */
+  background-color: #000;
+  /* 黑色背景 */
+  margin: 0;
   overflow: hidden;
+  /* 隐藏超出部分 */
 }
 
-.animation {
-  display: grid;
-}
-
-.scroll-text {
-  display: inline-block;
-  font-weight: bold;
+/* 滚动文字样式 */
+.scrolling-text {
+  position: absolute;
   font-size: 500rpx;
+  font-weight: bold;
+  /* 字体加粗 */
   color: #fff;
+  /* 白色文字 */
   white-space: nowrap;
-  writing-mode: vertical-lr;
+  /* 防止换行 */
   transform: rotate(90deg);
+  /* 文字倾斜90° */
+  animation: scroll-text 6s linear infinite;
+  /* 启动滚动动画 */
+}
+
+/* 动画效果：文字从下到上滚动 */
+@keyframes scroll-text {
+  0% {
+    top: 1624px;
+    /* 初始位置：屏幕底部 */
+  }
+
+  100% {
+    top: -1624px;
+    /* 结束位置：屏幕顶部 */
+  }
 }

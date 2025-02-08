@@ -1,7 +1,5 @@
-<custom-navigation navigationInfo="{{pageConfig}}" zIndex="2"></custom-navigation>
+<custom-navigation navigationInfo="{{pageConfig}}" zIndex="2" showNav></custom-navigation>
 
-<view class="index-container flexCenter" catch:tap="gotoScrollText">
-  <view class="animation" animation="{{animation}}">
-    <text class="scroll-text text" wx:for="{{scrollText}}">{{item}}</text>
-  </view>
+<view class="container">
+  <view class="scrolling-text">{{scrollText}}</view>
 </view>

@@ -20,7 +20,7 @@
     </view>
 
     <!-- 中间标题 -->
-    <view class="navbar_title" style="color:{{navigationInfo.pageTitleColor}};">
+    <view class="navbar_title gradient-text" style="color:{{navigationInfo.pageTitleColor}};">
       <text wx:if="{{navigationInfo.pageTitle}}" space="nbsp">{{navigationInfo.pageTitle}}</text>
       <image wx:if="{{navigationInfo.pageImg}}" src="{{navigationInfo.pageImg}}" style="width:167rpx; height: 34rpx;">
       </image>

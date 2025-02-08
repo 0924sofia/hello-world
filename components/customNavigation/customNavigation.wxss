@@ -74,10 +74,32 @@
   text-align: center;
   color: #fff;
   font-size: 32rpx;
-  font-weight: 400;
+  font-weight: bold;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.gradient-text {
+  -webkit-background-clip: text;
+  /* 背景裁剪为文字 */
+  animation: gradient-animation 3s infinite;
+  /* 动画效果 */
+}
+
+/* 定义渐变动效的动画 */
+@keyframes gradient-animation {
+  0% {
+    color: #ff0
+  }
+
+  50% {
+    color: #ff69b4
+  }
+
+  100% {
+    color: #00ff00;
+  }
 }
 
 /* 背景图 */

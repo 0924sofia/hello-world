@@ -27,7 +27,7 @@ page {
   grid-template-columns: repeat(2, 1fr);
   margin-top: 40rpx;
   gap: 10px;
-  font-size: 40rpx;
+  font-size: 50rpx;
 }
 
 .left {

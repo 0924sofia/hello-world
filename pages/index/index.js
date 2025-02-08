@@ -85,7 +85,15 @@ Page({
     this.bindAnimation();
   },
 
+  // 滚动弹幕
   gotoScrollText: utils.debounce(function () {
+    wx.navigateTo({
+      url: '/pages/scrollText/scrollText',
+    })
+  }, 500, true),
+
+  // 表白灯牌
+  gotoConfession: utils.debounce(function () {
     wx.navigateTo({
       url: '/pages/scrollText/scrollText',
     })
