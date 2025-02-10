@@ -16,10 +16,35 @@ page {
   background-color: #333333;
 }
 
-.scroll-text {
+.text {
   font-weight: bold;
   font-size: 80rpx;
   white-space: nowrap;
+  animation: 4s loop linear infinite normal;
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(350px);
+    -webkit-transform: translateX(350px);
+  }
+
+  100% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes loop {
+  0% {
+    transform: translateX(300px);
+    -webkit-transform: translateX(300px);
+  }
+
+  100% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+  }
 }
 
 .colorful-container {

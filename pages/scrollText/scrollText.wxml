@@ -1,4 +1,6 @@
-<custom-navigation navigationInfo="{{pageConfig}}" zIndex="2" showNav></custom-navigation>
+
+
+<view class="icon iconfont icon-youjiantou-copy1" style="top:calc({{statusBarHeight}}px + 20rpx);" catch:tap="navBack"></view>
 
 <view class="container">
   <view class="scrolling-text">{{scrollText}}</view>

@@ -13,6 +13,7 @@ Page({
     scrollText: '竖着滚动动画测试',
     scrollDuration: 4000, // 滚动速度（毫秒）
     windowHeight: app.globalData.windowHeight,
+    statusBarHeight: app.globalData.statusBarHeight,
   },
 
   /**
@@ -35,7 +36,9 @@ Page({
 
   },
 
-
+  navBack() {
+    wx.navigateBack()
+  },
 
   /**
    * 生命周期函数--监听页面隐藏

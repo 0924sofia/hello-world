@@ -3,9 +3,7 @@
 <view class="index-container">
 
   <view class="scroll-container flexCenter" catch:tap="gotoScrollText">
-    <view class="animation" animation="{{animation}}">
-      <text class="scroll-text text">{{scrollText}}</text>
-    </view>
+    <text class="text">{{scrollText}}</text>
   </view>
 
   <view class="colorful-container">

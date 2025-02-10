@@ -1,3 +1,11 @@
+.icon-youjiantou-copy1 {
+  position: fixed;
+  left: 20px;
+  color: #ffffff;
+  z-index: 2;
+  font-size: 48rpx;
+}
+
 /* 整体容器样式 */
 .container {
   display: flex;
@@ -20,7 +28,7 @@
   font-size: 500rpx;
   font-weight: bold;
   /* 字体加粗 */
-  color: #fff;
+  color: #ffffff;
   /* 白色文字 */
   white-space: nowrap;
   /* 防止换行 */
