@@ -50,3 +50,93 @@
     /* 结束位置：屏幕顶部 */
   }
 }
+
+.bottom-container {
+  position: fixed;
+  bottom: 40rpx;
+  left: 20rpx;
+}
+
+.input-container {
+  border: 2rpx solid #ffffff;
+  width: 450rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  padding: 0 40rpx;
+  color: #fff;
+}
+
+.icon-biaoqing,
+.icon-shezhi {
+  color: #ffffff;
+  font-size: 60rpx;
+  margin-left: 20rpx;
+}
+
+.icon-shezhi {
+  font-size: 64rpx;
+}
+
+/* 设置弹窗 */
+.setting-dialog {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #333333;
+  z-index: 2;
+  width: 100vw;
+  height: 300rpx;
+  color: #fff;
+}
+
+.change-tab {
+  color: gray;
+  width: 120rpx;
+  background-color: transparent;
+  height: 80rpx;
+  margin-bottom: 60rpx;
+}
+
+.tab-active {
+  background-color: rgba(26, 173, 25, 1);
+  color: #fff;
+}
+
+.confirm-setting {
+  background-color: rgba(26, 173, 25, 1);
+  width: 120rpx;
+  height: 60rpx;
+  border-radius: 80rpx;
+  margin-top: 12rpx;
+  line-height: 80rpx;
+  margin-right: 12rpx;
+}
+
+.size-list {
+  padding: 10rpx 20rpx;
+  background-color: #444;
+  margin-right: 20rpx;
+  position: relative;
+}
+
+.size-active {
+  background-color: gray;
+}
+
+.icon-choose {
+  position: absolute;
+  right: -16rpx;
+  top: -16rpx;
+  color: rgba(26, 173, 25, 1);
+  z-index: 3;
+}
+
+.white-bg {
+  width: 26rpx;
+  height: 26rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  right: -12rpx;
+  top: -12rpx;
+}

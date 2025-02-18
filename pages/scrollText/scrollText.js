@@ -10,16 +10,24 @@ Page({
       pageBgColor: '#000',
       pageTitle: '',
     },
-    scrollText: '竖着滚动动画测试',
+    scrollText: '',
     scrollDuration: 4000, // 滚动速度（毫秒）
     windowHeight: app.globalData.windowHeight,
     statusBarHeight: app.globalData.statusBarHeight,
+    tabList: ['字号', '颜色', '背景'],
+    tabIndex: 0,
+    sizeList: ['小', '中', '大', '特大', '超特大'],
+    sizeIndex: 2,
+    bottomDialog: false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    this.setData({
+      scrollText: options?.scrollText
+    })
   },
 
   /**
@@ -34,6 +42,46 @@ Page({
    */
   onShow() {
 
+  },
+
+  changeTab(e) {
+    const {
+      index
+    } = e.currentTarget.dataset
+    this.setData({
+      tabIndex: index
+    })
+  },
+
+  chooseSize(e) {
+    const {
+      index
+    } = e.currentTarget.dataset
+    this.setData({
+      sizeIndex: index
+    })
+  },
+
+  confirmSetting() {
+    this.setData({
+      bottomDialog: false
+    })
+  },
+
+  openEmoticon() {
+
+  },
+
+  openSetting() {
+    this.setData({
+      bottomDialog: true
+    })
+  },
+
+  bindconfirm(e) {
+    this.setData({
+      scrollText: e.detail.value
+    })
   },
 
   navBack() {

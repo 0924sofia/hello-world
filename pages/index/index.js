@@ -88,7 +88,7 @@ Page({
   // 滚动弹幕
   gotoScrollText: utils.debounce(function () {
     wx.navigateTo({
-      url: '/pages/scrollText/scrollText',
+      url: `/pages/scrollText/scrollText?scrollText=${this.data.scrollText}`,
     })
   }, 500, true),
 
