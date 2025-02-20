@@ -19,6 +19,61 @@ Page({
     sizeList: ['小', '中', '大', '特大', '超特大'],
     sizeIndex: 2,
     bottomDialog: false,
+    colorList: [{
+      id: 1,
+      name: '白色',
+      value: '#fff'
+    }, {
+      id: 2,
+      name: '粉色',
+      value: '#F4C1EA'
+    }, {
+      id: 3,
+      name: '玫红色',
+      value: '#ff00ff'
+    }, {
+      id: 4,
+      name: '红色',
+      value: '#ff0000'
+    }, {
+      id: 5,
+      name: '橙色',
+      value: '#ffa500'
+    }, {
+      id: 6,
+      name: '黄色',
+      value: '#FFFF00'
+    }, {
+      id: 7,
+      name: '绿色',
+      value: '#00FF00'
+    }, {
+      id: 8,
+      name: '青色',
+      value: '#007175'
+    }, {
+      id: 9,
+      name: '蓝色',
+      value: '#0000FF'
+    }, {
+      id: 10,
+      name: '深蓝色',
+      value: '#000080'
+    }, {
+      id: 11,
+      name: '紫色',
+      value: '#9932CD'
+    }, {
+      id: 12,
+      name: '灰色',
+      value: '#808080'
+    }, {
+      id: 13,
+      name: '黑色',
+      value: '#000'
+    }],
+    rgb: 'rgb(0,154,97)', //初始值
+    pick: false
   },
 
   /**
@@ -44,6 +99,28 @@ Page({
 
   },
 
+  openColorPicker() {
+    this.setData({
+      pick: true,
+      bottomDialog: false
+    })
+  },
+
+  pickColor(e) {
+    this.setData({
+      colorPickValue: e.detail.color,
+    })
+  },
+
+  chooseColor(e) {
+    const {
+      index
+    } = e.currentTarget.dataset
+    this.setData({
+      colorIndex: index
+    })
+  },
+
   changeTab(e) {
     const {
       index
@@ -60,11 +137,33 @@ Page({
     this.setData({
       sizeIndex: index
     })
+    let fontSize = 250
+    switch (index) {
+      case 0:
+        fontSize = 50
+        break;
+      case 1:
+        fontSize = 100
+        break;
+      case 2:
+        fontSize = 150
+        break;
+      case 3:
+        fontSize = 200
+        break;
+      case 4:
+        fontSize = 250
+        break;
+    }
+    this.setData({
+      fontSize,
+    })
   },
 
   confirmSetting() {
     this.setData({
-      bottomDialog: false
+      bottomDialog: false,
+      tabIndex: 0,
     })
   },
 

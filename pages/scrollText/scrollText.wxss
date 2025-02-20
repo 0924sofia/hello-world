@@ -29,6 +29,7 @@
   font-weight: bold;
   /* 字体加粗 */
   color: #ffffff;
+  /* color: gray; */
   /* 白色文字 */
   white-space: nowrap;
   /* 防止换行 */
@@ -94,7 +95,6 @@
   width: 120rpx;
   background-color: transparent;
   height: 80rpx;
-  margin-bottom: 60rpx;
 }
 
 .tab-active {
@@ -102,14 +102,23 @@
   color: #fff;
 }
 
+.right-confirm {
+  margin-top: 12rpx;
+  margin-right: 12rpx;
+}
+
+.md-color {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+}
+
 .confirm-setting {
   background-color: rgba(26, 173, 25, 1);
   width: 120rpx;
   height: 60rpx;
   border-radius: 80rpx;
-  margin-top: 12rpx;
   line-height: 80rpx;
-  margin-right: 12rpx;
 }
 
 .size-list {
@@ -139,4 +148,25 @@
   position: absolute;
   right: -12rpx;
   top: -12rpx;
+}
+
+.color-list-container {
+  width: calc(100vw - 80rpx);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.scroll-view {
+  width: auto;
+}
+
+.color-list {
+  width: 80rpx;
+  height: 80rpx;
+  display: inline-block;
+}
+
+.color-active {
+  /* width: 100rpx;
+  height: 100rpx; */
 }
