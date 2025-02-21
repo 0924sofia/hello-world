@@ -152,12 +152,15 @@
 
 .color-list-container {
   width: calc(100vw - 80rpx);
-  overflow: hidden;
+  overflow: auto;
   white-space: nowrap;
+  height: auto;
 }
 
 .scroll-view {
   width: auto;
+  height: 96rpx;
+  overflow: scroll;
 }
 
 .color-list {
@@ -167,6 +170,7 @@
 }
 
 .color-active {
-  /* width: 100rpx;
-  height: 100rpx; */
+  transform: scale(1.2);
+  /* margin-top: 8rpx; */
+  /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); */
 }

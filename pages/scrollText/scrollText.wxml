@@ -1,13 +1,13 @@
 <view class="icon iconfont icon-youjiantou-copy1" style="top:calc({{statusBarHeight}}px + 20rpx);" catch:tap="navBack"></view>
 
-<view class="container">
+<view class="container" style="{{containerStyle}}">
   <view class="scrolling-text" style="{{scrollTextStyle}}">{{scrollText}}</view>
 </view>
 
 <view class="bottom-container flexCenter">
-  <input bindinput="bindinput" placeholder="请输入" class="input-container" bindconfirm="bindconfirm"></input>
-  <view class="icon iconfont icon-biaoqing" catch:tap="openEmoticon"></view>
-  <view class="icon iconfont icon-shezhi" catch:tap="openSetting"></view>
+  <input bindinput="bindinput" placeholder="请输入" placeholder-style="{{iconStyle}}" class="input-container" style="{{confirmStyle}}" bindconfirm="bindconfirm"></input>
+  <view class="icon iconfont icon-biaoqing" style="{{iconStyle}}" catch:tap="openEmoticon"></view>
+  <view class="icon iconfont icon-shezhi" style="{{iconStyle}}" catch:tap="openSetting"></view>
 </view>
 
 <view class="setting-dialog" wx:if="{{bottomDialog}}">
@@ -16,7 +16,7 @@
       <view catch:tap="changeTab" data-index="{{index}}" wx:for="{{tabList}}" wx:key="index" class="change-tab flexCenter {{tabIndex==index&&'tab-active'}}">{{item}}</view>
     </view>
     <view class="fx right-confirm">
-      <image wx:if="{{tabIndex==1}}" src="/static/image/mdcolor.png" class="md-color" catch:tap="openColorPicker"></image>
+      <image wx:if="{{tabIndex==1||tabIndex==2}}" src="/static/image/mdcolor.png" class="md-color" catch:tap="openColorPicker"></image>
       <view class="confirm-setting flexCenter" catch:tap="confirmSetting">确定</view>
     </view>
 
@@ -28,9 +28,9 @@
       <view class="white-bg" wx:if="{{sizeIndex==index}}"></view>
     </view>
 
-    <view class="color-list-container" wx:if="{{tabIndex==1}}">
-      <scroll-view scroll-x="{{true}}" class="scroll-view">
-        <view wx:for="{{colorList}}" wx:key="index" class="color-list {{colorIndex==index&&'color-active'}}" catch:tap="chooseColor"  data-index="{{index}}" style="background-color: {{item.value}};"></view>
+    <view class="color-list-container" wx:if="{{tabIndex==1||tabIndex==2}}">
+      <scroll-view scroll-x="{{true}}" scroll-into-view="{{toView}}" class="scroll-view">
+        <view wx:for="{{colorList}}" id="color{{index}}" wx:key="index" class="color-list {{colorIndex==index&&'color-active'}}" catch:tap="chooseColor" data-index="{{index}}" data-value="{{item.value}}" style="background-color: {{item.value}};"></view>
       </scroll-view>
     </view>
 

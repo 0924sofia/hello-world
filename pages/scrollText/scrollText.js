@@ -22,7 +22,7 @@ Page({
     colorList: [{
       id: 1,
       name: '白色',
-      value: '#fff'
+      value: '#ffffff'
     }, {
       id: 2,
       name: '粉色',
@@ -70,10 +70,11 @@ Page({
     }, {
       id: 13,
       name: '黑色',
-      value: '#000'
+      value: '#000000'
     }],
     rgb: 'rgb(0,154,97)', //初始值
-    pick: false
+    pick: false,
+    toView: '',
   },
 
   /**
@@ -110,15 +111,38 @@ Page({
     this.setData({
       colorPickValue: e.detail.color,
     })
+    this.setColor(e.detail.color)
   },
 
   chooseColor(e) {
     const {
-      index
+      index,
+      value
     } = e.currentTarget.dataset
     this.setData({
       colorIndex: index
     })
+    if (index > 5) {
+      this.setData({
+        toView: "color" + index
+      })
+    }
+
+    this.setColor(value)
+  },
+
+  setColor(value) {
+    if (this.data.tabIndex == 1) {
+      this.setData({
+        fontColor: value,
+        scrollTextStyle: `color:${value};font-size:${this.data.fontSize}px`
+      })
+    } else {
+      this.setData({
+        bgColor: value,
+        containerStyle: `background-color:${value}`,
+      })
+    }
   },
 
   changeTab(e) {
@@ -140,30 +164,34 @@ Page({
     let fontSize = 250
     switch (index) {
       case 0:
-        fontSize = 50
-        break;
-      case 1:
-        fontSize = 100
-        break;
-      case 2:
         fontSize = 150
         break;
-      case 3:
+      case 1:
         fontSize = 200
         break;
-      case 4:
+      case 2:
         fontSize = 250
+        break;
+      case 3:
+        fontSize = 300
+        break;
+      case 4:
+        fontSize = 350
         break;
     }
     this.setData({
       fontSize,
+      scrollTextStyle: `color:${this.data.fontColor};font-size:${fontSize}px;`,
     })
   },
 
   confirmSetting() {
+    const _rgb = this.getComplementaryColor(this.data.bgColor)
     this.setData({
       bottomDialog: false,
       tabIndex: 0,
+      confirmStyle: `border:2rpx solid ${_rgb}`,
+      iconStyle: `color:${_rgb}`,
     })
   },
 
@@ -181,6 +209,37 @@ Page({
     this.setData({
       scrollText: e.detail.value
     })
+  },
+
+  // 十六进制颜色转换成RGB值
+  hexToRgb(hex) {
+    // 移除 '#' 并转换为数字
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return {
+      r,
+      g,
+      b
+    };
+  },
+
+  // RGB值转换成十六进制颜色
+  rgbToHex({
+    r,
+    g,
+    b
+  }) {
+    return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
+  },
+  getComplementaryColor(hexColor) {
+    const rgb = this.hexToRgb(hexColor);
+    const complementaryRgb = {
+      r: 255 - rgb.r,
+      g: 255 - rgb.g,
+      b: 255 - rgb.b,
+    };
+    return this.rgbToHex(complementaryRgb);
   },
 
   navBack() {
