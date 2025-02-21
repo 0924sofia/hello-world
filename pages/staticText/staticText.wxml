@@ -1,0 +1,5 @@
+<view class="icon iconfont icon-youjiantou-copy1" style="top:calc({{statusBarHeight}}px + 20rpx);" catch:tap="navBack"></view>
+
+<view class="static-text">
+  <view class="color-breath-text" style="opacity:{{breathNum}}">呼吸文字效果</view>
+</view>

@@ -7,7 +7,7 @@ Page({
       pageBgColor: '#000',
       pageTitle: '手持弹幕',
     },
-    scrollText: '横着滚动动画测试',
+    scrollText: '滚动动画测试',
     scrollDuration: 3000, // 滚动速度（毫秒）
     windowWidth: app.globalData.windowWidth,
   },
@@ -95,7 +95,7 @@ Page({
   // 表白灯牌
   gotoConfession: utils.debounce(function () {
     wx.navigateTo({
-      url: '/pages/scrollText/scrollText',
+      url: '/pages/staticText/staticText',
     })
   }, 500, true),
 

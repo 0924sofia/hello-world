@@ -9,6 +9,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "staticText",
+          "pathName": "pages/staticText/staticText",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/scrollText/scrollText",
           "pathName": "pages/scrollText/scrollText",
           "query": "",

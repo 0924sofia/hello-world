@@ -14,11 +14,15 @@ Page({
     scrollDuration: 4000, // 滚动速度（毫秒）
     windowHeight: app.globalData.windowHeight,
     statusBarHeight: app.globalData.statusBarHeight,
-    tabList: ['字号', '颜色', '背景'],
+    tabList: ['字号', '颜色', '背景', '速度'],
     tabIndex: 0,
     sizeList: ['小', '中', '大', '特大', '超特大'],
+    speedList: ['静止', '慢', '中', '快'],
     sizeIndex: 2,
+    speedIndex: 2,
     bottomDialog: false,
+    showDialog: true,
+    bgColor: "#000000",
     colorList: [{
       id: 1,
       name: '白色',
@@ -185,6 +189,33 @@ Page({
     })
   },
 
+  chooseSpeed(e) {
+    const {
+      index
+    } = e.currentTarget.dataset
+    this.setData({
+      speedIndex: index
+    })
+    let fontSize = 250
+    switch (index) {
+      case 0:
+        fontSize = 150
+        break;
+      case 1:
+        fontSize = 200
+        break;
+      case 2:
+        fontSize = 250
+        break;
+      case 3:
+        fontSize = 300
+        break;
+    }
+    this.setData({
+
+    })
+  },
+
   confirmSetting() {
     const _rgb = this.getComplementaryColor(this.data.bgColor)
     this.setData({
@@ -195,8 +226,17 @@ Page({
     })
   },
 
-  openEmoticon() {
+  // 收起
+  closeDialog() {
+    this.setData({
+      showDialog: false,
+    })
+  },
 
+  showDialog() {
+    this.setData({
+      showDialog: !this.data.showDialog
+    })
   },
 
   openSetting() {

@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/scrollText/scrollText"
+    "pages/scrollText/scrollText",
+    "pages/staticText/staticText"
   ],
   "window": {
     "navigationBarTextStyle": "black",

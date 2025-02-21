@@ -1,0 +1,39 @@
+.icon-youjiantou-copy1 {
+  position: fixed;
+  left: 20px;
+  color: #ffffff;
+  z-index: 2;
+  font-size: 48rpx;
+}
+
+.static-text {
+  display: flex;
+  justify-content: center;
+  /* 水平居中 */
+  align-items: center;
+  /* 垂直居中 */
+  height: 100vh;
+  /* 全屏高度 */
+  background-color: #000;
+  /* 黑色背景 */
+  margin: 0;
+  overflow: hidden;
+  /* 隐藏超出部分 */
+}
+
+/* 定义呼吸动画 */
+@keyframes colorBreath {
+  0%, 100% {
+    opacity: 0.3;
+    color: #d69191; /* 起始颜色：红色 */
+  }
+  50% {
+    opacity: 1;
+    color: #FF0000; /* 中间颜色：绿色 */
+  }
+}
+
+.color-breath-text {
+  font-size: 32rpx;
+  animation: colorBreath 2s infinite ease-in-out; /* 2秒循环，平滑变速 */
+}

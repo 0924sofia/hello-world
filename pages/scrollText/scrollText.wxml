@@ -1,12 +1,12 @@
-<view class="icon iconfont icon-youjiantou-copy1" style="top:calc({{statusBarHeight}}px + 20rpx);" catch:tap="navBack"></view>
+<view class="icon iconfont icon-youjiantou-copy1" style="top:calc({{statusBarHeight}}px + 20rpx);" wx:if="{{showDialog}}" catch:tap="navBack"></view>
 
-<view class="container" style="{{containerStyle}}">
+<view class="container" catch:tap="showDialog" style="{{containerStyle}}">
   <view class="scrolling-text" style="{{scrollTextStyle}}">{{scrollText}}</view>
 </view>
 
-<view class="bottom-container flexCenter">
-  <input bindinput="bindinput" placeholder="请输入" placeholder-style="{{iconStyle}}" class="input-container" style="{{confirmStyle}}" bindconfirm="bindconfirm"></input>
-  <view class="icon iconfont icon-biaoqing" style="{{iconStyle}}" catch:tap="openEmoticon"></view>
+<view class="bottom-container flexCenter" wx:if="{{showDialog}}">
+  <input placeholder="请输入" placeholder-style="{{iconStyle}}" class="input-container" style="{{confirmStyle}}" bindconfirm="bindconfirm"></input>
+  <view class="icon iconfont icon-shouqiquanping" style="{{iconStyle}}" catch:tap="closeDialog"></view>
   <view class="icon iconfont icon-shezhi" style="{{iconStyle}}" catch:tap="openSetting"></view>
 </view>
 
@@ -32,6 +32,11 @@
       <scroll-view scroll-x="{{true}}" scroll-into-view="{{toView}}" class="scroll-view">
         <view wx:for="{{colorList}}" id="color{{index}}" wx:key="index" class="color-list {{colorIndex==index&&'color-active'}}" catch:tap="chooseColor" data-index="{{index}}" data-value="{{item.value}}" style="background-color: {{item.value}};"></view>
       </scroll-view>
+    </view>
+
+    <view wx:if="{{tabIndex==3}}" wx:for="{{speedList}}" wx:key="index" class="size-list flexCenter {{speedIndex==index&&'size-active'}}" catch:tap="chooseSpeed" data-index="{{index}}">{{item}}
+      <text class="icon iconfont icon-choose" wx:if="{{speedIndex==index}}"></text>
+      <view class="white-bg" wx:if="{{speedIndex==index}}"></view>
     </view>
 
 
