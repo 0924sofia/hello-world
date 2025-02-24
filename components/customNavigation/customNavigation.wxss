@@ -82,23 +82,24 @@
 
 .gradient-text {
   -webkit-background-clip: text;
-  /* 背景裁剪为文字 */
-  animation: gradient-animation 3s infinite;
-  /* 动画效果 */
+  width: fit-content;
+  background-image: linear-gradient(to right, #7F00FF, #FF7F00, #32CD32, #FF1493);
+  color: transparent;
+  background-clip: text;
+  /*动画效果*/
+  background-size: 300% 100%;
+  animation: gradientAnimation 2s linear infinite;
+  animation-direction: alternate;
 }
 
 /* 定义渐变动效的动画 */
-@keyframes gradient-animation {
+@keyframes gradientAnimation {
   0% {
-    color: #ff0
+    background-position: 0;
   }
 
-  50% {
-    color: #ff69b4
-  }
-
-  100% {
-    color: #00ff00;
+  to {
+    background-position: 100%;
   }
 }
 

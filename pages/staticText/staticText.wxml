@@ -1,5 +1,13 @@
 <view class="icon iconfont icon-youjiantou-copy1" style="top:calc({{statusBarHeight}}px + 20rpx);" catch:tap="navBack"></view>
 
-<view class="static-text">
-  <view class="color-breath-text" style="opacity:{{breathNum}}">呼吸文字效果</view>
+<view class="static-text" style="{{containerStyle}}">
+  <view class="color-breath-text" style="opacity:{{breathNum}};{{breathTextStyle}}">呼吸文字效果</view>
 </view>
+
+<setting-dialog show="{{bottomDialog}}"
+bind:chooseSize="chooseSize" 
+bind:openColorPicker="openColorPicker" 
+bind:changeTab="changeTab"
+bind:setColor="setColor" />
+
+<color-picker bindchangeColor="pickColor" initColor="{{rgb}}" show="{{pick}}" />

@@ -1,6 +1,5 @@
 {
   "usingComponents": {
-    "color-picker": "/miniprogram_npm/mini-color-picker/color-picker"
   },
   "navigationStyle": "custom"
 }

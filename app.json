@@ -14,6 +14,8 @@
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents",
   "usingComponents": {
-    "custom-navigation": "/components/customNavigation/customNavigation"
+    "custom-navigation": "/components/customNavigation/customNavigation",
+    "color-picker": "/miniprogram_npm/mini-color-picker/color-picker",
+    "setting-dialog": "/components/settingDialog/settingDialog"
   }
 }

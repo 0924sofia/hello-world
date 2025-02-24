@@ -21,19 +21,14 @@
   /* 隐藏超出部分 */
 }
 
-/* 定义呼吸动画 */
-@keyframes colorBreath {
-  0%, 100% {
-    opacity: 0.3;
-    color: #d69191; /* 起始颜色：红色 */
-  }
-  50% {
-    opacity: 1;
-    color: #FF0000; /* 中间颜色：绿色 */
-  }
-}
-
 .color-breath-text {
-  font-size: 32rpx;
-  animation: colorBreath 2s infinite ease-in-out; /* 2秒循环，平滑变速 */
+  font-size: 400rpx;
+  font-weight: bold;
+  color: #fff;
+  white-space: nowrap;
+  word-break: break-all;
+  transform: rotate(90deg);
+  animation: colorBreath 2s infinite ease-in-out;
+  /* 2秒循环，平滑变速 */
+  background-color: transparent;
 }

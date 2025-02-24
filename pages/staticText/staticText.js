@@ -7,7 +7,14 @@ Page({
   data: {
     statusBarHeight: app.globalData.statusBarHeight,
     breathNum: 1.0, // 初始透明度
-    reduce: true     // 控制透明度增减方向
+    reduce: true, // 控制透明度增减方向
+    show: true,
+    breathTextStyle: 'text-shadow: 0px 0px 40px #F4C1EA;',
+    rgb: 'rgb(0,154,97)', //初始值
+    pick: false,
+    fontColor: '#F4C1EA',
+    bottomDialog: true,
+    blurRadius: 40,
   },
 
   /**
@@ -30,6 +37,62 @@ Page({
   onShow() {
 
   },
+
+  chooseSize(e) {
+    const {
+      fontSize,
+      blurRadius
+    } = e.detail
+    this.setData({
+      fontSize,
+      breathTextStyle: `text-shadow: 0px 0px ${blurRadius}px ${this.data.fontColor};font-size:${fontSize}px;`,
+    })
+  },
+
+  openColorPicker() {
+    this.setData({
+      pick: true,
+      show: false
+    })
+  },
+
+  pickColor(e) {
+    this.setData({
+      colorPickValue: e.detail.color,
+    })
+    this.setColor({
+      color: e.detail.color,
+      tabIndex: this.data.tabIndex,
+      blurRadius: this.data.blurRadius
+    })
+  },
+
+  changeTab(e) {
+    this.setData({
+      tabIndex: e.detail
+    })
+  },
+
+  setColor(e) {
+    const {
+      tabIndex,
+      color,
+      blurRadius
+    } = e.detail || e
+    console.log('hyp e', e);
+    if (tabIndex == 1) {
+      this.setData({
+        fontColor: color,
+        breathTextStyle: `text-shadow: 0px 0px ${blurRadius}px ${color};font-size:${this.data.fontSize}px`
+      })
+    } else {
+      this.setData({
+        bgColor: color,
+        containerStyle: `background-color:${color}`,
+      })
+    }
+  },
+
   startBreathEffect() {
     setInterval(() => {
       let {
@@ -39,7 +102,7 @@ Page({
       // 调整透明度步长（每次增减0.1）
       if (reduce) {
         breathNum -= 0.1;
-        if (breathNum <= 0) reduce = false;
+        if (breathNum <= 0.4) reduce = false;
       } else {
         breathNum += 0.1;
         if (breathNum >= 1) reduce = true;
