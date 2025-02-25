@@ -1,4 +1,4 @@
-// components/settingDialog/settingDialog.js
+import * as utils from "../../utils/util";
 Component({
 
   /**
@@ -6,6 +6,7 @@ Component({
    */
   properties: {
     show: Boolean,
+    showDialog: Boolean,
   },
 
   options: {
@@ -20,7 +21,6 @@ Component({
     tabIndex: 0,
     sizeList: ['小', '中', '大', '特大', '超特大'],
     sizeIndex: 2,
-    showDialog: true,
     bgColor: "#000000",
     colorList: [{
       id: 1,
@@ -84,10 +84,22 @@ Component({
    */
   methods: {
 
+    bindconfirm(e) {
+      this.triggerEvent('bindconfirm',e.detail.value)
+    },
+
     openColorPicker() {
       this.triggerEvent('openColorPicker')
     },
 
+    // 收起
+    closeDialog() {
+      this.triggerEvent('closeDialog')
+    },
+
+    openSetting() {
+      this.triggerEvent('openSetting')
+    },
 
     pickColor(e) {
       this.setData({
@@ -122,7 +134,6 @@ Component({
       })
     },
 
-
     changeTab(e) {
       const {
         index
@@ -144,22 +155,22 @@ Component({
         blurRadius = 40
       switch (index) {
         case 0:
-          fontSize = 100
+          fontSize = 50
           break;
         case 1:
-          fontSize = 150
+          fontSize = 100
           blurRadius = 50
           break;
         case 2:
-          fontSize = 200
+          fontSize = 150
           blurRadius = 60
           break;
         case 3:
-          fontSize = 250
+          fontSize = 200
           blurRadius = 70
           break;
         case 4:
-          fontSize = 300
+          fontSize = 250
           blurRadius = 80
           break;
       }
@@ -173,7 +184,7 @@ Component({
     },
 
     confirmSetting() {
-      const _rgb = this.getComplementaryColor(this.data.bgColor)
+      const _rgb = utils.getComplementaryColor(this.data.bgColor)
       this.setData({
         show: false,
         tabIndex: 0,
@@ -182,11 +193,5 @@ Component({
       })
     },
 
-    // 收起
-    closeDialog() {
-      this.setData({
-        showDialog: false,
-      })
-    },
   }
 })

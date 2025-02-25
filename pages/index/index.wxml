@@ -8,6 +8,6 @@
 
   <view class="colorful-container">
     <view class="left flexCenter" catch:tap="gotoConfession">表白灯牌</view>
-    <view class="left right flexCenter">回声翻译</view>
+    <view class="left right flexCenter" catch:tap="">AI对话</view>
   </view>
 </view>

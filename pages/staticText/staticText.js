@@ -13,8 +13,10 @@ Page({
     rgb: 'rgb(0,154,97)', //初始值
     pick: false,
     fontColor: '#F4C1EA',
-    bottomDialog: true,
+    showDialog: true,
+    bottomDialog: false,
     blurRadius: 40,
+    staticText: '呼吸文字效果',
   },
 
   /**
@@ -36,6 +38,29 @@ Page({
    */
   onShow() {
 
+  },
+
+  bindconfirm(e) {
+    console.log('hyp ', e);
+    this.setData({
+      staticText: e.detail
+    })
+  },
+  closeDialog() {
+    this.setData({
+      showDialog: false,
+    })
+  },
+
+  showDialog() {
+    this.setData({
+      showDialog: !this.data.showDialog
+    })
+  },
+  openSetting() {
+    this.setData({
+      bottomDialog: true
+    })
   },
 
   chooseSize(e) {
@@ -113,6 +138,10 @@ Page({
         reduce
       });
     }, 200); // 200ms 调整一次，控制呼吸速度
+  },
+
+  navBack() {
+    wx.navigateBack()
   },
 
   /**

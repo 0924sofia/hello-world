@@ -42,7 +42,43 @@ function debounce(func, wait, immediate) {
   }
 }
 
+
+// 十六进制颜色转换成RGB值
+function hexToRgb(hex) {
+  // 移除 '#' 并转换为数字
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return {
+    r,
+    g,
+    b
+  };
+}
+
+// RGB值转换成十六进制颜色
+function rgbToHex({
+  r,
+  g,
+  b
+}) {
+  return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
+}
+
+function getComplementaryColor(hexColor) {
+  const rgb = this.hexToRgb(hexColor);
+  const complementaryRgb = {
+    r: 255 - rgb.r,
+    g: 255 - rgb.g,
+    b: 255 - rgb.b,
+  };
+  return this.rgbToHex(complementaryRgb);
+}
+
 module.exports = {
   formatTime,
   debounce,
+  hexToRgb,
+  rgbToHex,
+  getComplementaryColor
 }

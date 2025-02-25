@@ -1,13 +1,17 @@
-<view class="icon iconfont icon-youjiantou-copy1" style="top:calc({{statusBarHeight}}px + 20rpx);" catch:tap="navBack"></view>
+<view class="icon iconfont icon-youjiantou-copy1" style="top:calc({{statusBarHeight}}px + 20rpx);" catch:tap="navBack" wx:if="{{showDialog}}" ></view>
 
-<view class="static-text" style="{{containerStyle}}">
-  <view class="color-breath-text" style="opacity:{{breathNum}};{{breathTextStyle}}">呼吸文字效果</view>
+<view class="static-text" style="{{containerStyle}}" catch:tap="showDialog" >
+  <view class="color-breath-text" style="opacity:{{breathNum}};{{breathTextStyle}}">{{staticText}}</view>
 </view>
 
-<setting-dialog show="{{bottomDialog}}"
+<setting-dialog show="{{bottomDialog}}" 
+showDialog="{{showDialog}}" 
 bind:chooseSize="chooseSize" 
+bind:closeDialog="closeDialog"
+bind:openSetting="openSetting"
 bind:openColorPicker="openColorPicker" 
-bind:changeTab="changeTab"
+bind:bindconfirm="bindconfirm"
+bind:changeTab="changeTab" 
 bind:setColor="setColor" />
 
 <color-picker bindchangeColor="pickColor" initColor="{{rgb}}" show="{{pick}}" />

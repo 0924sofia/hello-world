@@ -1,3 +1,10 @@
+
+<view class="bottom-container flexCenter" wx:if="{{showDialog}}">
+  <input placeholder="请输入" placeholder-style="{{iconStyle}}" class="input-container" style="{{confirmStyle}}" bindconfirm="bindconfirm"></input>
+  <view class="icon iconfont icon-shouqiquanping" style="{{iconStyle}}" catch:tap="closeDialog"></view>
+  <view class="icon iconfont icon-shezhi" style="{{iconStyle}}" catch:tap="openSetting"></view>
+</view>
+
 <view class="setting-dialog" wx:if="{{show}}">
   <view class="flexBetween" style="margin-bottom: 60rpx;">
     <view class="fx">

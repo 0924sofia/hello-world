@@ -1,3 +1,29 @@
+.bottom-container {
+  position: fixed;
+  bottom: 40rpx;
+  left: 20rpx;
+}
+
+.input-container {
+  border: 2rpx solid #ffffff;
+  width: 450rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  padding: 0 40rpx;
+  color: #fff;
+}
+
+.icon-shouqiquanping,
+.icon-shezhi {
+  color: #ffffff;
+  font-size: 54rpx;
+  margin-left: 20rpx;
+}
+
+.icon-shezhi {
+  font-size: 64rpx;
+}
+
 /* 设置弹窗 */
 .setting-dialog {
   position: fixed;
