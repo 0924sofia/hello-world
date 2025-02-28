@@ -1,0 +1,17 @@
+<view class="icon iconfont icon-youjiantou-copy1" style="top:calc({{statusBarHeight}}px + 20rpx);" catch:tap="navBack" wx:if="{{showDialog}}" ></view>
+
+<view class="static-text" style="{{containerStyle}}" catch:tap="showDialog" >
+  <view class="color-breath-text" style="opacity:{{breathNum}};{{breathTextStyle}}">{{staticText}}</view>
+</view>
+
+<setting-dialog show="{{bottomDialog}}" 
+showDialog="{{showDialog}}" 
+bind:chooseSize="chooseSize" 
+bind:closeDialog="closeDialog"
+bind:openSetting="openSetting"
+bind:openColorPicker="openColorPicker" 
+bind:bindconfirm="bindconfirm"
+bind:changeTab="changeTab" 
+bind:setColor="setColor" />
+
+<color-picker bindchangeColor="pickColor" initColor="{{rgb}}" show="{{pick}}" />

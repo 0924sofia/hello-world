@@ -1,0 +1,173 @@
+.icon-youjiantou-copy1 {
+  position: fixed;
+  left: 20px;
+  color: #ffffff;
+  z-index: 2;
+  font-size: 48rpx;
+}
+
+/* 整体容器样式 */
+.container {
+  display: flex;
+  justify-content: center;
+  /* 水平居中 */
+  align-items: center;
+  /* 垂直居中 */
+  height: 100vh;
+  /* 全屏高度 */
+  background-color: #000;
+  /* 黑色背景 */
+  margin: 0;
+  overflow: hidden;
+  /* 隐藏超出部分 */
+}
+
+/* 滚动文字样式 */
+.scrolling-text {
+  position: absolute;
+  font-size: 500rpx;
+  font-weight: bold;
+  /* 字体加粗 */
+  color: #ffffff;
+  /* 白色文字 */
+  white-space: nowrap;
+  /* 防止换行 */
+  transform: rotate(90deg);
+  /* 文字倾斜90° */
+  animation: scroll-text 6s linear infinite;
+  /* 启动滚动动画 */
+}
+
+/* 动画效果：文字从下到上滚动 */
+@keyframes scroll-text {
+  0% {
+    top: 1624px;
+    /* 初始位置：屏幕底部 */
+  }
+
+  100% {
+    top: -1624px;
+    /* 结束位置：屏幕顶部 */
+  }
+}
+
+.bottom-container {
+  position: fixed;
+  bottom: 40rpx;
+  left: 20rpx;
+}
+
+.input-container {
+  border: 2rpx solid #ffffff;
+  width: 450rpx;
+  height: 80rpx;
+  border-radius: 80rpx;
+  padding: 0 40rpx;
+  color: #fff;
+}
+
+.icon-shouqiquanping,
+.icon-shezhi {
+  color: #ffffff;
+  font-size: 54rpx;
+  margin-left: 20rpx;
+}
+
+.icon-shezhi {
+  font-size: 64rpx;
+}
+
+/* 设置弹窗 */
+.setting-dialog {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2;
+  width: 100vw;
+  height: 300rpx;
+  color: #fff;
+}
+
+.change-tab {
+  color: gray;
+  width: 120rpx;
+  background-color: transparent;
+  height: 80rpx;
+}
+
+.tab-active {
+  background-color: rgba(26, 173, 25, 1);
+  color: #fff;
+}
+
+.right-confirm {
+  margin-top: 12rpx;
+  margin-right: 12rpx;
+}
+
+.md-color {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+}
+
+.confirm-setting {
+  background-color: rgba(26, 173, 25, 1);
+  width: 120rpx;
+  height: 60rpx;
+  border-radius: 80rpx;
+  line-height: 80rpx;
+}
+
+.size-list {
+  padding: 10rpx 20rpx;
+  background-color: #444;
+  margin-right: 20rpx;
+  position: relative;
+}
+
+.size-active {
+  background-color: gray;
+}
+
+.icon-choose {
+  position: absolute;
+  right: -16rpx;
+  top: -16rpx;
+  color: rgba(26, 173, 25, 1);
+  z-index: 3;
+}
+
+.white-bg {
+  width: 26rpx;
+  height: 26rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  right: -12rpx;
+  top: -12rpx;
+}
+
+.color-list-container {
+  width: calc(100vw - 80rpx);
+  overflow: auto;
+  white-space: nowrap;
+  height: auto;
+}
+
+.scroll-view {
+  width: auto;
+  height: 96rpx;
+  overflow: scroll;
+}
+
+.color-list {
+  width: 80rpx;
+  height: 80rpx;
+  display: inline-block;
+}
+
+.color-active {
+  transform: scale(1.2);
+}

@@ -1,0 +1,37 @@
+
+<view class="bottom-container flexCenter" wx:if="{{showDialog}}">
+  <input placeholder="请输入" placeholder-style="{{iconStyle}}" class="input-container" style="{{confirmStyle}}" bindconfirm="bindconfirm"></input>
+  <view class="icon iconfont icon-shouqiquanping" style="{{iconStyle}}" catch:tap="closeDialog"></view>
+  <view class="icon iconfont icon-shezhi" style="{{iconStyle}}" catch:tap="openSetting"></view>
+</view>
+
+<view class="setting-dialog" wx:if="{{show}}">
+  <view class="flexBetween" style="margin-bottom: 60rpx;">
+    <view class="fx">
+      <view catch:tap="changeTab" data-index="{{index}}" wx:for="{{tabList}}" wx:key="index" class="change-tab flexCenter {{tabIndex==index&&'tab-active'}}">{{item}}</view>
+    </view>
+    <view class="fx right-confirm">
+      <image wx:if="{{tabIndex==1||tabIndex==2}}" src="/static/image/mdcolor.png" class="md-color" catch:tap="openColorPicker"></image>
+      <view class="confirm-setting flexCenter" catch:tap="confirmSetting">确定</view>
+    </view>
+
+  </view>
+
+  <view class="flexCenter">
+    <view wx:if="{{tabIndex==0}}" wx:for="{{sizeList}}" wx:key="index" class="size-list flexCenter {{sizeIndex==index&&'size-active'}}" catch:tap="chooseSize" data-index="{{index}}">{{item}}
+      <text class="icon iconfont icon-choose" wx:if="{{sizeIndex==index}}"></text>
+      <view class="white-bg" wx:if="{{sizeIndex==index}}"></view>
+    </view>
+
+    <view class="color-list-container" wx:if="{{tabIndex==1||tabIndex==2}}">
+      <scroll-view scroll-x="{{true}}" scroll-into-view="{{toView}}" class="scroll-view">
+        <view wx:for="{{colorList}}" id="color{{index}}" wx:key="index" class="color-list {{colorIndex==index&&'color-active'}}" catch:tap="chooseColor" data-index="{{index}}" data-value="{{item.value}}" style="background-color: {{item.value}};"></view>
+      </scroll-view>
+    </view>
+
+
+  </view>
+
+
+
+</view>

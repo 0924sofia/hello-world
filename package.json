@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "mini-color-picker": "^0.1.2",
+    "replicate": "^1.0.1"
+  }
+}
