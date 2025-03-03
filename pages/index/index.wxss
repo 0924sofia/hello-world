@@ -14,6 +14,7 @@ page {
   display: flex;
   overflow: hidden;
   background-color: #333333;
+  color: gray;
 }
 
 .text {
@@ -55,8 +56,7 @@ page {
   font-size: 50rpx;
 }
 
-.left {
-  height: 200rpx;
+.scroll-text {
   background-color: #333333;
   text-shadow:
     0 0 5px #ff69b4,
@@ -75,20 +75,62 @@ page {
   /* 最深粉紫散光 */
 }
 
-.right {
-  text-shadow:
-    0 0 5px #00f,
-    /* 浅蓝散光 */
-    0 0 10px #00f,
-    /* 浅蓝外扩 */
-    0 0 20px #00f,
-    /* 蓝色过渡 */
-    0 0 30px #0055ff,
-    /* 深蓝散光 */
-    0 0 40px #0055ff,
-    /* 深蓝外扩 */
-    0 0 50px #0044cc,
-    /* 深蓝增强 */
-    0 0 75px #003399;
-  /* 最深蓝散光 */
+/* 设置 */
+.bottom-setting {
+  padding: 40rpx;
+  background-color: #333333;
+}
+
+.mT40 {
+  margin-top: 40rpx;
+}
+
+.left {
+  width: 100rpx;
+}
+
+.input-text {
+  height: 180rpx;
+  border: 2rpx solid #fff;
+  padding: 20rpx;
+}
+
+.color-list-container {
+  width: calc(100vw - 300rpx);
+  overflow: auto;
+  white-space: nowrap;
+  height: auto;
+}
+
+.scroll-view {
+  width: auto;
+  height: 96rpx;
+  overflow: scroll;
+}
+
+.color-list {
+  width: 80rpx;
+  height: 80rpx;
+  display: inline-block;
+}
+
+.md-color {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.color-active {
+  transform: scale(1.2);
+}
+
+.speed-item {
+  padding: 0 20rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border: 2rpx solid #fff;
+}
+
+.active {
+  color: rgba(26, 173, 25, 1);
+  border: 2rpx solid rgba(26, 173, 25, 1);
 }

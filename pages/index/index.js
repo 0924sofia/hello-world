@@ -10,6 +10,66 @@ Page({
     scrollText: '滚动动画测试',
     scrollDuration: 3000, // 滚动速度（毫秒）
     windowWidth: app.globalData.windowWidth,
+    colorList: [{
+      id: 1,
+      name: '白色',
+      value: '#ffffff'
+    }, {
+      id: 2,
+      name: '粉色',
+      value: '#F4C1EA'
+    }, {
+      id: 3,
+      name: '玫红色',
+      value: '#ff00ff'
+    }, {
+      id: 4,
+      name: '红色',
+      value: '#ff0000'
+    }, {
+      id: 5,
+      name: '橙色',
+      value: '#ffa500'
+    }, {
+      id: 6,
+      name: '黄色',
+      value: '#FFFF00'
+    }, {
+      id: 7,
+      name: '绿色',
+      value: '#00FF00'
+    }, {
+      id: 8,
+      name: '青色',
+      value: '#007175'
+    }, {
+      id: 9,
+      name: '蓝色',
+      value: '#0000FF'
+    }, {
+      id: 10,
+      name: '深蓝色',
+      value: '#000080'
+    }, {
+      id: 11,
+      name: '紫色',
+      value: '#9932CD'
+    }, {
+      id: 12,
+      name: '灰色',
+      value: '#808080'
+    }, {
+      id: 13,
+      name: '黑色',
+      value: '#000000'
+    }],
+    rgb: 'rgb(0,154,97)', //初始值
+    pick: false,
+    toView: '',
+    speedList: ['静止', '慢', '标准', '快'],
+    sizeList: ['小', '中', '标准', '大'],
+    sizeIndex: 2,
+    speedIndex: 2,
   },
 
   onLoad() {
@@ -18,6 +78,52 @@ Page({
       timingFunction: 'linear', // 匀速动画
     });
     this.bindAnimation();
+  },
+
+  bindconfirm(e) {
+    this.setData({
+      scrollText: e.detail.value
+    })
+  },
+
+  chooseColor(e) {
+    const {
+      index,
+      value
+    } = e.currentTarget.dataset
+    this.setData({
+      colorIndex: index
+    })
+    if (index > 5) {
+      this.setData({
+        toView: "color" + index
+      })
+    }
+
+    this.setColor(value, 1)
+  },
+
+  setColor(value, source) {
+    if (source == 1) {
+      this.setData({
+        fontColor: value,
+        scrollTextStyle: `color:${value};font-size:${this.data.fontSize}px`
+      })
+    } else {
+      this.setData({
+        bgColor: value,
+        containerStyle: `background-color:${value}`,
+      })
+    }
+  },
+
+  chooseSpeed(e) {
+    const {
+      index
+    } = e.currentTarget.dataset
+    this.setData({
+      speedIndex: index,
+    })
   },
 
   bindAnimation() {
